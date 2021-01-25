@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0,1"
+    tools:context=".HomeFragment">
+    <TableRow>
+        <Button
+            android:id="@+id/navDecisionTreeButton"
+            android:layout_gravity="center"
+            android:text="Decision Tree" />
+
+        <Button
+            android:id="@+id/navQuizButton"
+            android:layout_gravity="center"
+            android:text="Quiz" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/navBarcodeButton"
+            android:layout_gravity="center"
+            android:text="Barcode" />
+
+        <Button
+            android:id="@+id/navMapButton"
+            android:layout_gravity="center"
+            android:text="Map" />
+    </TableRow>
+</TableLayout>
