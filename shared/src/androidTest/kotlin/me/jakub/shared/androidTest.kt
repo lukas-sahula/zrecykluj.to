@@ -1,4 +1,4 @@
-package me.jakub.shared
+package vinencoding.shared
 
 import org.junit.Assert.assertTrue
 import org.junit.Test

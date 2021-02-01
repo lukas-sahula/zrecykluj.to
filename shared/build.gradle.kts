@@ -6,7 +6,7 @@ plugins {
     id("kotlin-android-extensions")
 }
 
-group = "me.jakub"
+group = "vinencoding"
 version = "1.0-SNAPSHOT"
 
 kotlin {

@@ -1,4 +1,4 @@
-package me.jakub.shared
+package vinencoding.shared
 
 
 class Greeting {

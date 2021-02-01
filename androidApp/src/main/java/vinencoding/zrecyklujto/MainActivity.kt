@@ -1,13 +1,7 @@
-package me.jakub.androidApp
+package vinencoding.zrecyklujto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import me.jakub.shared.Greeting
-import android.widget.TextView
-
-fun greet(): String {
-    return Greeting().greeting()
-}
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

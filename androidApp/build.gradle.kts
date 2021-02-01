@@ -5,7 +5,7 @@ plugins {
     id("kotlin-android")
 }
 
-group = "me.jakub"
+group = "vinencoding"
 version = "1.0-SNAPSHOT"
 
 dependencies {
@@ -24,7 +24,7 @@ dependencies {
 android {
     compileSdkVersion(29)
     defaultConfig {
-        applicationId = "me.jakub.androidApp"
+        applicationId = "vinencoding.zrecyklujto"
         minSdkVersion(24)
         targetSdkVersion(29)
         versionCode = 1

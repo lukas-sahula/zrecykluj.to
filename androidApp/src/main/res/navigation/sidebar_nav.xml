@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/decisionTreeFragment"
-        android:name="me.jakub.androidApp.DecisionTreeFragment"
+        android:name="vinencoding.zrecyklujto.DecisionTreeFragment"
         android:label="fragment_decision_tree"
         tools:layout="@layout/fragment_decision_tree" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/barcodeFragment"
-        android:name="me.jakub.androidApp.BarcodeFragment"
+        android:name="vinencoding.zrecyklujto.BarcodeFragment"
         android:label="fragment_barcode"
         tools:layout="@layout/fragment_barcode" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="me.jakub.androidApp.QuizFragment"
+        android:name="vinencoding.zrecyklujto.QuizFragment"
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
-        android:name="me.jakub.androidApp.MapFragment"
+        android:name="vinencoding.zrecyklujto.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="me.jakub.androidApp.HomeFragment"
+        android:name="vinencoding.zrecyklujto.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action

@@ -1,4 +1,4 @@
-package me.jakub.androidApp
+package vinencoding.zrecyklujto
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
