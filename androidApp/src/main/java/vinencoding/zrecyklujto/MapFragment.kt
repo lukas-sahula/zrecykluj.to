@@ -1,59 +1,45 @@
 package vinencoding.zrecyklujto
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
+
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MapFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MapFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    val mapyczHtml: String = "<!doctype html>\n" +
+            "<html>\n" +
+            "<head>\n" +
+            "\t<script src=\"https://api.mapy.cz/loader.js\"></script>\n" +
+            "\t<script>Loader.load()</script>\n" +
+            "</head>\n" +
+            "\n" +
+            "<body style=\"margin: 0; padding: 0\">\n" +
+            "\t<div id=\"mapa\" style=\"width:100vw; height:100vh;\"></div>\n" +
+            "\t<script type=\"text/javascript\">\n" +
+            "\t\tvar stred = SMap.Coords.fromWGS84(14.41, 50.08);\n" +
+            "\t\tvar mapa = new SMap(JAK.gel(\"mapa\"), stred, 10);\n" +
+            "\t\tmapa.addDefaultLayer(SMap.DEF_BASE).enable();\n" +
+            "\t\tmapa.addDefaultControls();\t      \t      \n" +
+            "\t</script>\n" +
+            "</body>\n" +
+            "</html>"
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MapFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MapFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val webview: WebView = view.findViewById(R.id.webview)
+        webview.settings.javaScriptEnabled = true
+        webview.loadData(mapyczHtml, "text/html", "UTF-8") // todo search for containers with https://api.mapy.cz/view?page=geocoding
     }
 }

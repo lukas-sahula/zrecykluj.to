@@ -1,12 +1,15 @@
 package vinencoding.zrecyklujto
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.Navigation
+import com.google.android.material.button.MaterialButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,7 +54,7 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_barcodeFragment)
         }
 
-        view.findViewById<Button>(R.id.navMapButton).setOnClickListener {
+        view.findViewById<MaterialButton>(R.id.navMapButton).setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_mapFragment)
         }
 
