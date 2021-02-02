@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,23 +10,25 @@
         <Button
             android:id="@+id/navDecisionTreeButton"
             android:layout_gravity="center"
-            android:text="Decision Tree" />
+            android:text="@string/decision_tree_fragment_title" />
 
         <Button
             android:id="@+id/navQuizButton"
             android:layout_gravity="center"
-            android:text="Quiz" />
+            android:text="@string/quiz_fragment_title" />
     </TableRow>
 
     <TableRow>
-        <Button
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
             android:id="@+id/navBarcodeButton"
             android:layout_gravity="center"
-            android:text="Barcode" />
+            app:icon="@drawable/ic_barcode_scan_black_48dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
             android:id="@+id/navMapButton"
             android:layout_gravity="center"
-            android:text="Map" />
+            app:icon="@drawable/baseline_map_black_48" />
     </TableRow>
 </TableLayout>
