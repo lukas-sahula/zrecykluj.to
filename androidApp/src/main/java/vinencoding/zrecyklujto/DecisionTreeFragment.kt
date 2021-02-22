@@ -1,16 +1,27 @@
 package vinencoding.zrecyklujto
 
 import android.content.Context
-import android.widget.LinearLayout
-import android.widget.ScrollView
-import android.widget.TextView
+import android.graphics.Color
 import androidx.cardview.widget.CardView
 import vinencoding.zrecyklujto.R
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import android.widget.RelativeLayout
+import android.widget.FrameLayout
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import android.widget.TextView
+import androidx.core.view.size
+import android.widget.LinearLayout
+
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,8 +41,29 @@ class DecisionTreeFragment : Fragment() {
 
     private val recycling_codes = arrayOf(
         "1;PET;Polyethylentereftalát (PET, PETE);kontejner na plasty, kontejner na PET;Pl",
-        "2;PE-HD;Vysokohustotní (lineární) polyetylen (HDPE, PE-HD);kontejner na plasty;Pa",
-        //....
+        "2;PE-HD;Vysokohustotní (lineární) polyetylen (HDPE, PE-HD);kontejner na plasty;Pl",
+        "3;PVC;Polyvinylchlorid (PVC, V);sběrný dvůr;Va",
+        "4;LDPE;Nízkohustotní (rozvětvený) polyetylen (LDPE, PE-LD);kontejner na plasty;Pl",
+        "5;PP;Polypropylen (PP);kontejner na plasty;Pl",
+        "6;PS;Polystyren (PS);kontejner na plasty;Pl",
+        "7;O;Ostatní plasty (O, OTHER);sběrný dvůr;Va",
+        "20;PAP;Vlnitá lepenka (PAP);kontejner na papír;Pa",
+        "21;PAP;Hladká lepenka (PAP);kontejner na papír;Pa",
+        "22-39;PAP;Papír (PAP);kontejner na papír;Pa",
+        "40;Fe;Ocel (Fe);kontejner na kovy, sběrný dvůr;Me",
+        "41;ALU;Hliník (ALU);kontejner na kovy, sběrný dvůr;Me",
+        "42-49; ;Ostatní kovy;kontejner na kovy, sběrný dvůr;Me",
+        "50;FOR;Dřevo (FOR);sběrný dvůr;Va",
+        "51;FOR;Korek (FOR);sběrný dvůr;Va",
+        "52-59;FOR;Ostatní dřevo (FOR);sběrný dvůr;Va",
+        "60;TEX;Bavlna (TEX);kontejner na textil, sběrný dvůr;Va",
+        "61;TEX;Juta (TEX);kontejner na textil, sběrný dvůr;Va",
+        "62-69;TEX;Ostatní textilie (TEX);kontejner na textil, sběrný dvůr;Va",
+        "70;GL;Bílé sklo (GL);kontejner na sklo;Gl",
+        "71;GL;Zelené sklo (GL);kontejner na sklo;Gl",
+        "72;GL;Hnědé sklo (GL);kontejner na sklo;Gl",
+        "73-79;GL;Ostatní sklo (GL);kontejner na sklo;Gl",
+        "81,84;C/PAP;Nápojový karton (C/PAP, C/PAP/ALU);kontejner na nápojové kartony;Te"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,24 +83,110 @@ class DecisionTreeFragment : Fragment() {
         val cardLinearLayout = view.findViewById<LinearLayout>(R.id.cardsLayout)
 
         for (code in recycling_codes){
-            val parts = code.split(";").toTypedArray();
+            val parts = code.split(";").toTypedArray()
 
             val numCode = parts[0]
             val strCode = parts[1]
             val header = parts[2]
             val description = parts[3]
-            var type = parts[4]
+            val type = parts[4]
 
             val card = CardView(view.context, null, R.style.BaseCardView)
-            val textView = TextView(card.context)
 
-            textView.text = numCode
-            if (type == "Pl")
-                card.setCardBackgroundColor(R.color.colorYellowPlastic)
-            else if (type == "Pa")
-                card.setCardBackgroundColor(R.color.colorBluePaper)
+            val cardContentLayout = LinearLayout(view.context)
+            cardContentLayout.orientation = 0 //horizontal
 
-            card.addView(textView)
+            val textLinearLayout = LinearLayout (view.context)
+            textLinearLayout.orientation = 1 //vertical
+
+            val symbolImageView = ImageView(view.context)
+            symbolImageView.setImageResource(R.drawable.recycling_symbol)
+            val layoutParams = LinearLayout.LayoutParams(250, 250)
+            symbolImageView.layoutParams = layoutParams
+            symbolImageView.id = id
+
+            val textNumCode = TextView(card.context)
+            textNumCode.text = numCode
+            textNumCode.setTextAppearance(R.style.SymbolTextView)
+            textNumCode.id = id
+
+            var leftPaddingNum = 0
+            when {
+                numCode.length == 1 -> {leftPaddingNum = 110}
+                numCode.length == 2 -> {leftPaddingNum = 95}
+                numCode.length > 2 -> {leftPaddingNum = 70}
+            }
+            textNumCode.setPadding(leftPaddingNum,115,0,0)
+
+            val textStrCode = TextView(card.context)
+            textStrCode.text = strCode
+            textStrCode.setTextAppearance(R.style.SymbolTextView)
+            textStrCode.id = id
+
+            var leftPaddingStr = 0
+            when {
+                strCode.length == 1 -> {leftPaddingStr = 110}
+                strCode.length == 2 -> {leftPaddingStr = 90}
+                strCode.length == 3 -> {leftPaddingStr = 80}
+                strCode.length > 3 -> {leftPaddingStr = 70}
+            }
+            textStrCode.setPadding(leftPaddingStr,250,0,5)
+
+            val textViewHeader = TextView(card.context)
+            textViewHeader.text = header
+            textViewHeader.gravity = Gravity.TOP
+            textViewHeader.setTextAppearance(R.style.HeadingTextView)
+            textViewHeader.setPadding(20,0,0,30)
+
+            val textViewDescription = TextView(card.context)
+            textViewDescription.text = description
+            textViewDescription.gravity = Gravity.BOTTOM
+            textViewDescription.setTextAppearance(R.style.DescriptionTextView)
+            textViewDescription.setPadding(20,10,0,0)
+
+            when (type) {
+                "Pl" -> card.setBackgroundResource(R.color.colorYellowPlastic)
+                "Pa" -> card.setBackgroundResource(R.color.colorBluePaper)
+                "Me" -> card.setBackgroundResource(R.color.colorGreyMetal)
+                "Gl" -> card.setBackgroundResource(R.color.colorGreenGlass)
+                "Te" -> card.setBackgroundResource(R.color.colorOrangeTetra)
+            }
+
+            val pictureLayout = ConstraintLayout(view.context)
+
+            pictureLayout.addView(symbolImageView)
+            pictureLayout.addView(textNumCode)
+            pictureLayout.addView(textStrCode)
+
+            val constraintSet = ConstraintSet()
+            constraintSet.clone(pictureLayout)
+
+            //connect(symbolImageView.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
+            //constraintSet.connect(symbolImageView.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)
+            //constraintSet.connect(symbolImageView.id, ConstraintSet.BOTTOM, pictureLayout.id, ConstraintSet.BOTTOM)
+            //constraintSet.connect(symbolImageView.id, ConstraintSet.TOP, pictureLayout.id, ConstraintSet.TOP)
+            //constraintSet.constrainHeight(symbolImageView.id, 250)
+            //constraintSet.constrainWidth(symbolImageView.id, 250)
+            //constraintSet.applyTo(pictureLayout)
+
+            // line 107 padding
+            //constraintSet.connect(textNumCode.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
+            //constraintSet.connect(textNumCode.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)
+            //constraintSet.connect(textNumCode.id, ConstraintSet.BOTTOM, pictureLayout.id, ConstraintSet.BOTTOM)
+            //constraintSet.connect(textNumCode.id, ConstraintSet.TOP, pictureLayout.id, ConstraintSet.TOP)
+            //constraintSet.applyTo(pictureLayout)
+
+            //constraintSet.connect(textStrCode.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
+            //constraintSet.connect(textStrCode.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)
+            //constraintSet.connect(textStrCode.id, ConstraintSet.BOTTOM, pictureLayout.id, ConstraintSet.BOTTOM)
+            //constraintSet.connect(textStrCode.id, ConstraintSet.TOP, pictureLayout.id, ConstraintSet.TOP)
+            //constraintSet.applyTo(pictureLayout)
+
+            textLinearLayout.addView(textViewHeader)
+            textLinearLayout.addView(textViewDescription)
+            cardContentLayout.addView(pictureLayout)
+            cardContentLayout.addView(textLinearLayout)
+            card.addView(cardContentLayout)
             cardLinearLayout.addView(card)
         }
 
