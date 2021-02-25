@@ -1,9 +1,6 @@
 package vinencoding.zrecyklujto
 
-import android.content.Context
-import android.graphics.Color
 import androidx.cardview.widget.CardView
-import vinencoding.zrecyklujto.R
 import android.os.Bundle
 import android.view.Gravity
 import androidx.fragment.app.Fragment
@@ -11,16 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import android.widget.RelativeLayout
-import android.widget.FrameLayout
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import android.widget.TextView
-import androidx.core.view.size
 import android.widget.LinearLayout
-
-
-
+import androidx.navigation.Navigation
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -66,14 +57,6 @@ class DecisionTreeFragment : Fragment() {
         "81,84;C/PAP;Nápojový karton (C/PAP, C/PAP/ALU);kontejner na nápojové kartony;Te"
     )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -92,6 +75,17 @@ class DecisionTreeFragment : Fragment() {
             val type = parts[4]
 
             val card = CardView(view.context, null, R.style.BaseCardView)
+
+            card.setOnClickListener {
+                when (type) {
+                    "Pl" -> Navigation.findNavController(view).navigate(R.id.action_decisionTreeFragment_to_plasticFragment)
+                    "Pa" -> Navigation.findNavController(view).navigate(R.id.action_decisionTreeFragment_to_paperFragment)
+                    "Me" -> Navigation.findNavController(view).navigate(R.id.action_decisionTreeFragment_to_metalFragment)
+                    "Gl" -> Navigation.findNavController(view).navigate(R.id.action_decisionTreeFragment_to_glassFragment)
+                    "Te" -> Navigation.findNavController(view).navigate(R.id.action_decisionTreeFragment_to_tetrapackFragment)
+                    "Va" -> Navigation.findNavController(view).navigate(R.id.action_decisionTreeFragment_to_otherMaterialFragment)
+                }
+            }
 
             val cardContentLayout = LinearLayout(view.context)
             cardContentLayout.orientation = 0 //horizontal
@@ -158,8 +152,8 @@ class DecisionTreeFragment : Fragment() {
             pictureLayout.addView(textNumCode)
             pictureLayout.addView(textStrCode)
 
-            val constraintSet = ConstraintSet()
-            constraintSet.clone(pictureLayout)
+            //val constraintSet = ConstraintSet()
+            //constraintSet.clone(pictureLayout)
 
             //connect(symbolImageView.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
             //constraintSet.connect(symbolImageView.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)

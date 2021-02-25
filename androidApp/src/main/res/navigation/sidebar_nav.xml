@@ -13,6 +13,14 @@
         <action
             android:id="@+id/action_decisionTreeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action android:id="@+id/action_decisionTreeFragment_to_plasticFragment" app:destination="@id/plasticFragment"/>
+        <action android:id="@+id/action_decisionTreeFragment_to_glassFragment" app:destination="@id/glassFragment"/>
+        <action android:id="@+id/action_decisionTreeFragment_to_metalFragment" app:destination="@id/metalFragment"/>
+        <action android:id="@+id/action_decisionTreeFragment_to_paperFragment" app:destination="@id/paperFragment"/>
+        <action android:id="@+id/action_decisionTreeFragment_to_otherMaterialFragment"
+                app:destination="@id/otherMaterialFragment"/>
+        <action android:id="@+id/action_decisionTreeFragment_to_tetrapackFragment"
+                app:destination="@id/tetrapackFragment"/>
     </fragment>
     <fragment
         android:id="@+id/barcodeFragment"
@@ -59,4 +67,18 @@
             android:id="@+id/action_homeFragment_to_mapFragment"
             app:destination="@id/mapFragment" />
     </fragment>
+    <fragment android:id="@+id/plasticFragment"
+              android:name="vinencoding.zrecyklujto.PlasticFragment"
+              android:label="fragment_plastic"
+              tools:layout="@layout/fragment_plastic"/>
+    <fragment android:id="@+id/glassFragment" android:name="vinencoding.zrecyklujto.GlassFragment"
+              android:label="fragment_glass" tools:layout="@layout/fragment_glass"/>
+    <fragment android:id="@+id/metalFragment" android:name="vinencoding.zrecyklujto.MetalFragment"
+              android:label="fragment_metal" tools:layout="@layout/fragment_metal"/>
+    <fragment android:id="@+id/paperFragment" android:name="vinencoding.zrecyklujto.PaperFragment"
+              android:label="fragment_paper" tools:layout="@layout/fragment_paper"/>
+    <fragment android:id="@+id/otherMaterialFragment" android:name="vinencoding.zrecyklujto.OtherMaterialFragment"
+              android:label="fragment_other_material" tools:layout="@layout/fragment_other_material"/>
+    <fragment android:id="@+id/tetrapackFragment" android:name="vinencoding.zrecyklujto.TetrapackFragment"
+              android:label="fragment_tetrapack" tools:layout="@layout/fragment_tetrapack"/>
 </navigation>
