@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +23,12 @@ class TetrapackFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val tetrapack_tips = arrayOf(
+        "Papírové krabice například od džusů nebo mléka nazýváme nápojovými kartony. Organizovaný sběr těchto obalů probíhá již v mnoha městech a obcích v celé ČR. Sběrné nádoby, do kterých lze použitý nápojový karton odkládat, jsou označeny speciální oranžovou nálepkou s označením Nápojový karton. V některých obcích je sbírán tento odpad do oranžových pytlů. O způsobu sběru nápojových kartonů ve vaší obci/městě se můžete informovat na obecním nebo městském úřadě (odbor životního prostředí nebo příslušný pracovník mající na starosti odpadové hospodářství).",
+        "Z nápojového kartonu není nutné odtrhnout umělohmotný uzávěr. Pokud ve vaší obci probíhá sběr nápojových kartonů, prázdný karton pouze vypláchněte vodou, stlačte a i s víčkem odhoďte do kontejneru nebo oranžového pytle, který je ve vaší obci pro tento odpad určen.",
+        "Sešlapávaní, mačkání a kroucení PET lahví a nápojových kartonů je velmi vhodné jak pro skladování, tak i následnou přepravu. Takto zmenšených odpadů se do kontejneru vejde cca 4x více. Některé kontejnery na nápojový karton jsou navíc konstruovány tak, aby do nich nešlo vhodit nezmáčknutý obal. Sníží se tak přepravní náklady."
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +41,29 @@ class TetrapackFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tetrapack, container, false)
+        val view = inflater.inflate(R.layout.fragment_tetrapack, container, false)
+
+        val linearLayout = view.findViewById<LinearLayout>(R.id.tipLinearLayout)
+
+        val header = TextView(view.context)
+        header.text = "Kontejner na nápojové kartony"
+        header.setTextAppearance(R.style.TipHeadingTextView)
+        header.setBackgroundResource(R.color.colorOrangeTetra)
+        header.setPadding(15,20,15,20)
+
+        linearLayout.addView(header)
+
+        for (tip in tetrapack_tips){
+
+            val tipTextView = TextView(view.context)
+            tipTextView.text = tip
+            tipTextView.setTextAppearance(R.style.TipTextView)
+            tipTextView.setPadding(20,20,20,20)
+
+            linearLayout.addView(tipTextView)
+        }
+
+        return view
     }
 
     companion object {

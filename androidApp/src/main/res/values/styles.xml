@@ -17,13 +17,23 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="DescriptionTextView" parent="HeadingTextView">
+    <style name="DescriptionTextView" parent="TextAppearance.AppCompat">
         <item name="android:textSize">14dp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="SymbolTextView" parent="HeadingTextView">
+    <style name="SymbolTextView" parent="TextAppearance.AppCompat">
         <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TipHeadingTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TipTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="BaseCardView" parent="CardView">

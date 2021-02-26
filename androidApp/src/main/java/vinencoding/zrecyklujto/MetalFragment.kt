@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +23,11 @@ class MetalFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val metal_tips = arrayOf(
+        "Kovové obaly a hliníková víčka odhazujte, do sběrných nádob nebo pytlů určených pro sběr kovů. Větší množství můžete odnést do sběrného dvora nebo výkupny kovů.",
+        "Nově lze do speciálně označených žlutých kontejnerů házet kromě plastu také kov. Materiály se pak oddělí v dotřiďovací lince."
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +40,29 @@ class MetalFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_metal, container, false)
+        val view = inflater.inflate(R.layout.fragment_metal, container, false)
+
+        val linearLayout = view.findViewById<LinearLayout>(R.id.tipLinearLayout)
+
+        val header = TextView(view.context)
+        header.text = "Kontejner na kov"
+        header.setTextAppearance(R.style.TipHeadingTextView)
+        header.setBackgroundResource(R.color.colorGreyMetal)
+        header.setPadding(15,20,15,20)
+
+        linearLayout.addView(header)
+
+        for (tip in metal_tips){
+
+            val tipTextView = TextView(view.context)
+            tipTextView.text = tip
+            tipTextView.setTextAppearance(R.style.TipTextView)
+            tipTextView.setPadding(20,20,20,20)
+
+            linearLayout.addView(tipTextView)
+        }
+
+        return view
     }
 
     companion object {

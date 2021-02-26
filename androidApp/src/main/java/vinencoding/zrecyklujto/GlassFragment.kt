@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +23,10 @@ class GlassFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val glass_tips = arrayOf(
+        "Varné a laboratorní sklo díky své vyšší teplotě tavení nepatří do běžných kontejnerů na ulicích. Pokud se Vám rozbije například skleněná varná konvice, hoďte ji do směsného odpadu. V případě většího množství tohoto skla využijte sběrný dvůr."
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,7 +39,27 @@ class GlassFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_glass, container, false)
+        val view = inflater.inflate(R.layout.fragment_glass, container, false)
+
+        val linearLayout = view.findViewById<LinearLayout>(R.id.tipLinearLayout)
+
+        val header = TextView(view.context)
+        header.text = "Kontejner na sklo"
+        header.setTextAppearance(R.style.TipHeadingTextView)
+        header.setBackgroundResource(R.color.colorGreenGlass)
+        linearLayout.addView(header)
+
+        for (tip in glass_tips){
+
+            val tipTextView = TextView(view.context)
+            tipTextView.text = tip
+            tipTextView.setTextAppearance(R.style.TipTextView)
+            tipTextView.setPadding(20,20,20,20)
+
+            linearLayout.addView(tipTextView)
+        }
+
+        return view
     }
 
     companion object {
