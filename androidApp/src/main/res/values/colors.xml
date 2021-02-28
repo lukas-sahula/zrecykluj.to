@@ -5,9 +5,9 @@
     <color name="colorAccent">#76d275</color>
     <color name="colorSecondary">#03a9f4</color>
     <color name="colorSecondaryDark">#007ac1</color>
-    <color name="colorYellowPlastic">#fdd835</color>
-    <color name="colorBluePaper">#1e88e5</color>
-    <color name="colorGreyMetal">#90a4ae</color>
-    <color name="colorGreenGlass">#4caf50</color>
-    <color name="colorOrangeTetra">#f57c00</color>
+    <color name="colorYellowPlastic">#fddf5d</color>
+    <color name="colorBluePaper">#4a9fea</color>
+    <color name="colorGreyMetal">#a6b6be</color>
+    <color name="colorGreenGlass">#6fbf72</color>
+    <color name="colorOrangeTetra">#f79632</color>
 </resources>

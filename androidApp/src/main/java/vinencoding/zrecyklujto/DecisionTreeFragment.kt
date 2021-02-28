@@ -11,6 +11,10 @@ import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.widget.TextView
 import android.widget.LinearLayout
+import androidx.core.view.marginBottom
+import androidx.core.view.marginStart
+import androidx.core.view.setMargins
+import androidx.core.view.setPadding
 import androidx.navigation.Navigation
 
 
@@ -65,6 +69,8 @@ class DecisionTreeFragment : Fragment() {
 
         val cardLinearLayout = view.findViewById<LinearLayout>(R.id.cardsLayout)
 
+        val scale = resources.displayMetrics.density
+
         for (code in recycling_codes){
             val parts = code.split(";").toTypedArray()
 
@@ -75,6 +81,10 @@ class DecisionTreeFragment : Fragment() {
             val type = parts[4]
 
             val card = CardView(view.context, null, R.style.BaseCardView)
+            val params = LinearLayout.LayoutParams(-1, -1)
+            params.setMargins(0,0,0, 32)
+            card.layoutParams = params
+            card.setPadding((16*scale).toInt())
 
             card.setOnClickListener {
                 when (type) {
@@ -95,36 +105,21 @@ class DecisionTreeFragment : Fragment() {
 
             val symbolImageView = ImageView(view.context)
             symbolImageView.setImageResource(R.drawable.recycling_symbol)
-            val layoutParams = LinearLayout.LayoutParams(250, 250)
-            symbolImageView.layoutParams = layoutParams
+            symbolImageView.layoutParams = LinearLayout.LayoutParams(126, 126)
             symbolImageView.id = id
 
             val textNumCode = TextView(card.context)
             textNumCode.text = numCode
             textNumCode.setTextAppearance(R.style.SymbolTextView)
             textNumCode.id = id
-
-            var leftPaddingNum = 0
-            when {
-                numCode.length == 1 -> {leftPaddingNum = 110}
-                numCode.length == 2 -> {leftPaddingNum = 95}
-                numCode.length > 2 -> {leftPaddingNum = 70}
-            }
-            textNumCode.setPadding(leftPaddingNum,115,0,0)
+            textNumCode.gravity = Gravity.CENTER
+            textNumCode.layoutParams = LinearLayout.LayoutParams(-1, -1)
 
             val textStrCode = TextView(card.context)
             textStrCode.text = strCode
             textStrCode.setTextAppearance(R.style.SymbolTextView)
             textStrCode.id = id
-
-            var leftPaddingStr = 0
-            when {
-                strCode.length == 1 -> {leftPaddingStr = 110}
-                strCode.length == 2 -> {leftPaddingStr = 90}
-                strCode.length == 3 -> {leftPaddingStr = 80}
-                strCode.length > 3 -> {leftPaddingStr = 70}
-            }
-            textStrCode.setPadding(leftPaddingStr,250,0,5)
+            textStrCode.gravity = Gravity.CENTER_HORIZONTAL
 
             val textViewHeader = TextView(card.context)
             textViewHeader.text = header
@@ -146,35 +141,19 @@ class DecisionTreeFragment : Fragment() {
                 "Te" -> card.setBackgroundResource(R.color.colorOrangeTetra)
             }
 
-            val pictureLayout = ConstraintLayout(view.context)
+            val pictureLayout = LinearLayout(view.context)
+            pictureLayout.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+            pictureLayout.orientation = 1
 
-            pictureLayout.addView(symbolImageView)
-            pictureLayout.addView(textNumCode)
+            val symbolLayout = FrameLayout(view.context)
+            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+            symbolLayout.layoutParams = layoutParams
+            layoutParams.setMargins(16)
+
+            symbolLayout.addView(symbolImageView)
+            symbolLayout.addView(textNumCode)
+            pictureLayout.addView(symbolLayout)
             pictureLayout.addView(textStrCode)
-
-            //val constraintSet = ConstraintSet()
-            //constraintSet.clone(pictureLayout)
-
-            //connect(symbolImageView.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
-            //constraintSet.connect(symbolImageView.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)
-            //constraintSet.connect(symbolImageView.id, ConstraintSet.BOTTOM, pictureLayout.id, ConstraintSet.BOTTOM)
-            //constraintSet.connect(symbolImageView.id, ConstraintSet.TOP, pictureLayout.id, ConstraintSet.TOP)
-            //constraintSet.constrainHeight(symbolImageView.id, 250)
-            //constraintSet.constrainWidth(symbolImageView.id, 250)
-            //constraintSet.applyTo(pictureLayout)
-
-            // line 107 padding
-            //constraintSet.connect(textNumCode.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
-            //constraintSet.connect(textNumCode.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)
-            //constraintSet.connect(textNumCode.id, ConstraintSet.BOTTOM, pictureLayout.id, ConstraintSet.BOTTOM)
-            //constraintSet.connect(textNumCode.id, ConstraintSet.TOP, pictureLayout.id, ConstraintSet.TOP)
-            //constraintSet.applyTo(pictureLayout)
-
-            //constraintSet.connect(textStrCode.id, ConstraintSet.START, pictureLayout.id, ConstraintSet.START)
-            //constraintSet.connect(textStrCode.id, ConstraintSet.END, pictureLayout.id, ConstraintSet.END)
-            //constraintSet.connect(textStrCode.id, ConstraintSet.BOTTOM, pictureLayout.id, ConstraintSet.BOTTOM)
-            //constraintSet.connect(textStrCode.id, ConstraintSet.TOP, pictureLayout.id, ConstraintSet.TOP)
-            //constraintSet.applyTo(pictureLayout)
 
             textLinearLayout.addView(textViewHeader)
             textLinearLayout.addView(textViewDescription)
