@@ -12,4 +12,32 @@
         <item name="iconGravity">textStart</item>
     </style>
 
+    <style name="HeadingTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DescriptionTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SymbolTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TipHeadingTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TipTextView" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="BaseCardView" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>
