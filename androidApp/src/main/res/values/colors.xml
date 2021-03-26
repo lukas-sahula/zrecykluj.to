@@ -10,4 +10,6 @@
     <color name="colorGreyMetal">#a6b6be</color>
     <color name="colorGreenGlass">#6fbf72</color>
     <color name="colorOrangeTetra">#f79632</color>
+    <color name="colorWrong">#ff5252</color>
+    <color name="colorCorrect">#81c784</color>
 </resources>
