@@ -24,6 +24,7 @@ class PaperFragment : Fragment() {
     private var param2: String? = null
 
     private val paper_tips = arrayOf(
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
         "Z časopisů a jiných dokumentů není třeba odstraňovat svorky. Při dalším zpracování papíru v papírnách jsou při rozvláknění a následném několikastupňovém třídění odloučeny.",
         "Laminátový papír nepatří do papíru. Jinak do papíru patří papír všeho druhu, kromě polaminátovaného a povoskovaného papíru.",
         "Do modrého kontejneru vhazujte skartovaný papír stejně jako každý jiný papír, který není mokrý, mastný nebo jinak znečištěný. Tím se myslí i biologické nečistoty.",

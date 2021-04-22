@@ -28,6 +28,7 @@ class PlasticFragment : Fragment() {
     private var param2: String? = null
 
     private val plastic_tips = arrayOf(
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
         "Nádoba na třídění plastu by měla být vždy označena žlutou barvou a viditelnou nálepkou s informacemi. V některých obcích naleznete společné třídicí nádoby pro plast i nápojové kartony.",
         "PET láhve můžete do kontejneru vhazovat s etiketou i víčkem. Obojí bude při dalším zpracování automaticky odděleno. PET láhve sešlápněte, nasaďte víčko a to již neutahujte! Nesešlápnuté láhve jsou objemné a tím zdražují přepravu, komplikují manipulaci a recyklace se tak stává nákladnější.",
         "Pokud má PET lahev místo etikety tzv. shrink sleeve (rukávek/návlek zpravidla po celém těle lahve), je nutné tento návlek z lahve odstranit a vytřídit do kontejneru na plasty zvlášť. (Mohou být vyrobeny z jiných materiálů a zpracování společně s PET by pak nebylo možné).",

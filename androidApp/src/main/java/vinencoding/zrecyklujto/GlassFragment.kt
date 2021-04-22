@@ -24,6 +24,7 @@ class GlassFragment : Fragment() {
     private var param2: String? = null
 
     private val glass_tips = arrayOf(
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
         "Sklo se vhazuje do zeleného nebo bílého kontejneru. Pokud jsou k dispozici oba, je důležité třídit sklo i podle barev: Barevné do zeleného, čiré do bílého. Pokud máte kontejner na sklo jen jeden, pak do něj dávejte sklo bez ohledu na barvu. Vytříděné sklo není nutné rozbíjet, bude se dále třídit! Díky svým vlastnostem se dá skleněný odpad recyklovat do nekonečna.",
         "Do zeleného kontejneru můžeme vhazovat barevné sklo, například lahve od vína, alkoholických i nealkoholických nápojů. Vhodit do zeleného kontejneru můžete také tabulové sklo z oken a ze dveří.",
         "Do bílého kontejneru vhazujte sklo čiré, tedy sklenice od kečupů, marmelád či zavařenin a rozbité skleničky.",

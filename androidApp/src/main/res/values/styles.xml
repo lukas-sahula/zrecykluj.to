@@ -28,7 +28,7 @@
     </style>
 
     <style name="SymbolTextViewSmaller" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">11dp</item>
         <item name="android:textStyle">bold</item>
     </style>
 

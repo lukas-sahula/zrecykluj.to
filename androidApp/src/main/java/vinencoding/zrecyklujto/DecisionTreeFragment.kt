@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.*
 import android.widget.TextView
 import android.widget.LinearLayout
-import androidx.core.view.marginTop
 import androidx.core.view.setMargins
 import androidx.core.view.setPadding
 import androidx.navigation.Navigation
@@ -96,10 +95,10 @@ class DecisionTreeFragment : Fragment() {
             }
 
             val cardContentLayout = LinearLayout(view.context)
-            cardContentLayout.orientation = 0 //horizontal
+            cardContentLayout.orientation = LinearLayout.HORIZONTAL
 
             val textLinearLayout = LinearLayout (view.context)
-            textLinearLayout.orientation = 1 //vertical
+            textLinearLayout.orientation = LinearLayout.VERTICAL
 
             val symbolImageView = ImageView(view.context)
             symbolImageView.setImageResource(R.drawable.recycling_symbol)
@@ -114,7 +113,9 @@ class DecisionTreeFragment : Fragment() {
             textNumCode.layoutParams = LinearLayout.LayoutParams(-1, -1)
             if (textNumCode.text.length > 2){
                 textNumCode.setTextAppearance(R.style.SymbolTextViewSmaller)
-                textNumCode.setPadding(0,21,0,0)
+                (textNumCode.layoutParams as LinearLayout.LayoutParams).apply{
+                    topMargin = 45
+                }
             }
 
             val textStrCode = TextView(card.context)
@@ -145,7 +146,7 @@ class DecisionTreeFragment : Fragment() {
 
             val pictureLayout = LinearLayout(view.context)
             pictureLayout.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-            pictureLayout.orientation = 1
+            pictureLayout.orientation = LinearLayout.VERTICAL
 
             val symbolLayout = FrameLayout(view.context)
             val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)

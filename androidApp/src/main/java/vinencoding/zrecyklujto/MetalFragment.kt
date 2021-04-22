@@ -24,6 +24,7 @@ class MetalFragment : Fragment() {
     private var param2: String? = null
 
     private val metal_tips = arrayOf(
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
         "Kovové obaly a hliníková víčka odhazujte, do sběrných nádob nebo pytlů určených pro sběr kovů. Větší množství můžete odnést do sběrného dvora nebo výkupny kovů.",
         "Nově lze do speciálně označených žlutých kontejnerů házet kromě plastu také kov. Materiály se pak oddělí v dotřiďovací lince.",
         "V Praze lze použité kávové kapsle (hliníkové) vyhodit do veřejných sběrných nádob na kovové obaly.",
