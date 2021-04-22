@@ -1,6 +1,5 @@
 package vinencoding.zrecyklujto
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -20,7 +19,6 @@ class QuizResultActivity : AppCompatActivity(){
 
         val button = findViewById<Button>(R.id.finish_button)
         button.setOnClickListener{
-            startActivity(Intent(this,MainActivity::class.java))
             finish()
         }
     }

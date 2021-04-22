@@ -8,11 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
 import android.widget.TextView
 import android.widget.LinearLayout
-import androidx.core.view.marginBottom
-import androidx.core.view.marginStart
+import androidx.core.view.marginTop
 import androidx.core.view.setMargins
 import androidx.core.view.setPadding
 import androidx.navigation.Navigation
@@ -114,6 +112,10 @@ class DecisionTreeFragment : Fragment() {
             textNumCode.id = id
             textNumCode.gravity = Gravity.CENTER
             textNumCode.layoutParams = LinearLayout.LayoutParams(-1, -1)
+            if (textNumCode.text.length > 2){
+                textNumCode.setTextAppearance(R.style.SymbolTextViewSmaller)
+                textNumCode.setPadding(0,21,0,0)
+            }
 
             val textStrCode = TextView(card.context)
             textStrCode.text = strCode

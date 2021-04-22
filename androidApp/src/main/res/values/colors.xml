@@ -5,11 +5,15 @@
     <color name="colorAccent">#76d275</color>
     <color name="colorSecondary">#03a9f4</color>
     <color name="colorSecondaryDark">#007ac1</color>
+
     <color name="colorYellowPlastic">#fddf5d</color>
     <color name="colorBluePaper">#4a9fea</color>
     <color name="colorGreyMetal">#a6b6be</color>
     <color name="colorGreenGlass">#6fbf72</color>
     <color name="colorOrangeTetra">#f79632</color>
+
     <color name="colorWrong">#ff5252</color>
     <color name="colorCorrect">#81c784</color>
+    <color name="colorQuizLightGreen">#E1FFE0</color>
+    <color name="quizText">#292929</color>
 </resources>
