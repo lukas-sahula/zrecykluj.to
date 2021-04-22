@@ -18,6 +18,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var questionsList: ArrayList<Question>? = null
     private var selectedOptionPosition: Int = 0
     private var correctAnswer: Int = 0
+
     private var randomArray: ArrayList<Question>? = Constants.getQuestions()
     private var question: Question? = null
 
@@ -25,8 +26,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var optionTwo: TextView? = null
     private var optionThree: TextView? = null
     private var optionFour: TextView? = null
+
     private var submitButton: Button? = null
     private var explanationButton: TextView? = null
+
+    private var optionSubmitted: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +48,16 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionFour = findViewById(R.id.tv_option_four)
         explanationButton = findViewById(R.id.tv_quiz_explanation)
 
+
         setQuestion()
 
         optionOne!!.setOnClickListener(this)
         optionTwo!!.setOnClickListener(this)
         optionThree!!.setOnClickListener(this)
         optionFour!!.setOnClickListener(this)
+
         submitButton!!.setOnClickListener(this)
+        submitButton!!.isClickable = false
 
         explanationButton!!.setOnClickListener{
             showExplanationDialog()
@@ -66,6 +73,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         if(currentPosition == questionsList!!.size) {
             submitButton!!.text = getString(R.string.button_finish_text)
         }else{
+            if(optionSubmitted == false){
+                submitButton!!.isClickable = false
+            }
             submitButton!!.text = getString(R.string.button_submit_text)
         }
 
@@ -113,15 +123,19 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         when(p0?.id){
             R.id.tv_option_one -> {
                 selectedOptionView(optionOne!!, 1)
+                submitButton!!.isClickable = true
             }
             R.id.tv_option_two -> {
                 selectedOptionView(optionTwo!!, 2)
+                submitButton!!.isClickable = true
             }
             R.id.tv_option_three -> {
                 selectedOptionView(optionThree!!, 3)
+                submitButton!!.isClickable = true
             }
             R.id.tv_option_four -> {
                 selectedOptionView(optionFour!!, 4)
+                submitButton!!.isClickable = true
             }
             R.id.button_submit -> {
                 if(selectedOptionPosition == 0){
@@ -129,11 +143,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
                     currentPosition ++
 
-                    //user can choose from options
-                    optionOne!!.isClickable = true
-                    optionTwo!!.isClickable = true
-                    optionThree!!.isClickable = true
-                    optionFour!!.isClickable = true
+                    optionSubmitted = false
+                    optionClickable()
 
                     when{
                         currentPosition <= questionsList!!.size -> {
@@ -159,16 +170,15 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     answerView(question.correctAnswer, R.drawable.correct_option_bg)
 
                     if(currentPosition == questionsList!!.size){
+                        explanationButton!!.visibility = View.VISIBLE
                         submitButton!!.text = getString(R.string.button_finish_text)
                     }else{
                         explanationButton!!.visibility = View.VISIBLE
                         submitButton!!.text = getString(R.string.button_next_text)
 
                         //user can not change answer (textview is not clickable)
-                        optionOne!!.isClickable = false
-                        optionTwo!!.isClickable = false
-                        optionThree!!.isClickable = false
-                        optionFour!!.isClickable = false
+                        optionSubmitted = true
+                        optionClickable()
                     }
                     selectedOptionPosition = 0
                 }
@@ -211,6 +221,20 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun shuffleQuestions(list: ArrayList<Question>){
         list.shuffle()
+    }
+
+    private fun optionClickable(){
+        if (optionSubmitted){
+            optionOne!!.isClickable = false
+            optionTwo!!.isClickable = false
+            optionThree!!.isClickable = false
+            optionFour!!.isClickable = false
+        }else{
+            optionOne!!.isClickable = true
+            optionTwo!!.isClickable = true
+            optionThree!!.isClickable = true
+            optionFour!!.isClickable = true
+        }
     }
 }
 
