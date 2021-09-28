@@ -1,9 +1,234 @@
-package vinencoding.zrecyklujto
+package vinencoding.zrecyklujto.utils
+
+import vinencoding.zrecyklujto.models.Question
+import vinencoding.zrecyklujto.models.RecyclingCode
 
 object Constants {
 
     const val TOTAL_QUESTIONS: String = "total_question"
     const val CORRECT_ANSWERS: String = "correct_answers"
+
+    fun getDecisionTreeCardInformation(): ArrayList<RecyclingCode> {
+        val recyclingCodesList : ArrayList<RecyclingCode> = ArrayList()
+
+        val recyclingCode1 = RecyclingCode(
+            "1",
+            "PET",
+            "Polyethylentereftalát (PET, PETE)",
+            "kontejner na plasty, kontejner na PET",
+            "Pl"
+        )
+        recyclingCodesList.add(recyclingCode1)
+
+        val recyclingCode2 = RecyclingCode(
+            "2",
+            "PE-HD",
+            "Vysokohustotní (lineární) polyetylen (HDPE, PE-HD)",
+            "kontejner na plasty",
+            "Pl"
+        )
+        recyclingCodesList.add(recyclingCode2)
+
+        val recyclingCode3 = RecyclingCode(
+            "3",
+            "PVC",
+            "Polyvinylchlorid (PVC, V)",
+            "sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode3)
+
+        val recyclingCode4 = RecyclingCode(
+            "4",
+            "LDPE",
+            "Nízkohustotní (rozvětvený) polyetylen (LDPE, PE-LD)",
+            "kontejner na plasty",
+            "Pl"
+        )
+        recyclingCodesList.add(recyclingCode4)
+
+        val recyclingCode5 = RecyclingCode(
+            "5",
+            "PP",
+            "Polypropylen (PP)",
+            "kontejner na plasty",
+            "Pl"
+        )
+        recyclingCodesList.add(recyclingCode5)
+
+        val recyclingCode6 = RecyclingCode(
+            "6",
+            "PS",
+            "Polystyren (PS)",
+            "kontejner na plasty",
+            "Pl"
+        )
+        recyclingCodesList.add(recyclingCode6)
+
+        val recyclingCode7 = RecyclingCode(
+            "7",
+            "O",
+            "Ostatní plasty (O, OTHER)",
+            "sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode7)
+
+        val recyclingCode8 = RecyclingCode(
+            "20",
+            "PAP",
+            "Vlnitá lepenka (PAP)",
+            "kontejner na papír",
+            "Pa"
+        )
+        recyclingCodesList.add(recyclingCode8)
+
+        val recyclingCode9 = RecyclingCode(
+            "21",
+            "PAP",
+            "Hladká lepenka (PAP)",
+            "kontejner na papír",
+            "Pa"
+        )
+        recyclingCodesList.add(recyclingCode9)
+
+        val recyclingCode10 = RecyclingCode(
+            "22-39",
+            "PAP",
+            "Papír (PAP)",
+            "kontejner na papír",
+            "Pa"
+        )
+        recyclingCodesList.add(recyclingCode10)
+
+        val recyclingCode11 = RecyclingCode(
+            "40",
+            "Fe",
+            "Ocel (Fe)",
+            "kontejner na kovy, sběrný dvůr",
+            "Me"
+        )
+        recyclingCodesList.add(recyclingCode11)
+
+        val recyclingCode12 = RecyclingCode(
+            "41",
+            "ALU",
+            "Hliník (ALU)",
+            "kontejner na kovy, sběrný dvůr",
+            "Me"
+        )
+        recyclingCodesList.add(recyclingCode12)
+
+        val recyclingCode13 = RecyclingCode(
+            "42-49",
+            "",
+            "Ostatní kovy",
+            "kontejner na kovy, sběrný dvůr",
+            "Me"
+        )
+        recyclingCodesList.add(recyclingCode13)
+
+        val recyclingCode14 = RecyclingCode(
+            "50",
+            "FOR",
+            "Dřevo (FOR)",
+            "sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode14)
+
+        val recyclingCode15 = RecyclingCode(
+            "51",
+            "FOR",
+            "Korek (FOR)",
+            "sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode15)
+
+        val recyclingCode16 = RecyclingCode(
+            "52-59",
+            "FOR",
+            "Ostatní dřevo (FOR)",
+            "sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode16)
+
+        val recyclingCode17 = RecyclingCode(
+            "60",
+            "TEX",
+            "Bavlna (TEX)",
+            "kontejner na textil, sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode17)
+
+        val recyclingCode18 = RecyclingCode(
+            "61",
+            "TEX",
+            "Juta (TEX)",
+            "kontejner na textil, sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode18)
+
+        val recyclingCode19 = RecyclingCode(
+            "62-69",
+            "TEX",
+            "Ostatní textilie (TEX)",
+            "kontejner na textil, sběrný dvůr",
+            "Va"
+        )
+        recyclingCodesList.add(recyclingCode19)
+
+        val recyclingCode20 = RecyclingCode(
+            "70",
+            "GL",
+            "Bílé sklo (GL)",
+            "kontejner na sklo",
+            "Gl"
+        )
+        recyclingCodesList.add(recyclingCode20)
+
+        val recyclingCode21 = RecyclingCode(
+            "71",
+            "GL",
+            "Zelené sklo (GL)",
+            "kontejner na sklo",
+            "Gl"
+        )
+        recyclingCodesList.add(recyclingCode21)
+
+        val recyclingCode22 = RecyclingCode(
+            "72",
+            "GL",
+            "Hnědé sklo (GL)",
+            "kontejner na sklo",
+            "Gl"
+        )
+        recyclingCodesList.add(recyclingCode22)
+
+        val recyclingCode23 = RecyclingCode(
+            "73-79",
+            "GL",
+            "Ostatní sklo (GL)",
+            "kontejner na sklo",
+            "Gl"
+        )
+        recyclingCodesList.add(recyclingCode23)
+
+        val recyclingCode24 = RecyclingCode(
+            "81,84",
+            "C/PAP",
+            "Nápojový karton (C/PAP, C/PAP/ALU)",
+            "kontejner na nápojové kartony",
+            "Te"
+        )
+        recyclingCodesList.add(recyclingCode24)
+
+        return recyclingCodesList
+    }
 
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()

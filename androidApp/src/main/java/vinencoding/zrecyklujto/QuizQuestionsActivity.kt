@@ -10,6 +10,8 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import android.widget.TextView
 import vinencoding.zrecyklujto.R.layout.explanation_dialog
+import vinencoding.zrecyklujto.models.Question
+import vinencoding.zrecyklujto.utils.Constants
 
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {

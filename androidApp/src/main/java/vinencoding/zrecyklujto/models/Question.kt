@@ -1,4 +1,4 @@
-package vinencoding.zrecyklujto
+package vinencoding.zrecyklujto.models
 
 data class Question (
     val id: Int,
