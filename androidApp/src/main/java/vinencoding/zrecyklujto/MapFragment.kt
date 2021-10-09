@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
+import vinencoding.zrecyklujto.R
 
 class MapFragment : Fragment() {
 

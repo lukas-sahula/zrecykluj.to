@@ -24,7 +24,16 @@ class GlassFragment : Fragment() {
     private var param2: String? = null
 
     private val glass_tips = arrayOf(
-        "Varné a laboratorní sklo díky své vyšší teplotě tavení nepatří do běžných kontejnerů na ulicích. Pokud se Vám rozbije například skleněná varná konvice, hoďte ji do směsného odpadu. V případě většího množství tohoto skla využijte sběrný dvůr."
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
+        "Sklo se vhazuje do zeleného nebo bílého kontejneru. Pokud jsou k dispozici oba, je důležité třídit sklo i podle barev: Barevné do zeleného, čiré do bílého. Pokud máte kontejner na sklo jen jeden, pak do něj dávejte sklo bez ohledu na barvu. Vytříděné sklo není nutné rozbíjet, bude se dále třídit! Díky svým vlastnostem se dá skleněný odpad recyklovat do nekonečna.",
+        "Do zeleného kontejneru můžeme vhazovat barevné sklo, například lahve od vína, alkoholických i nealkoholických nápojů. Vhodit do zeleného kontejneru můžete také tabulové sklo z oken a ze dveří.",
+        "Do bílého kontejneru vhazujte sklo čiré, tedy sklenice od kečupů, marmelád či zavařenin a rozbité skleničky.",
+        "Do těchto nádob nepatří keramika a porcelán. Nepatří sem ani autosklo, zrcadla nebo třeba drátované sklo, zlacená a pokovená skla. Varné a laboratorní sklo, stejně jako sklokeramika do zeleného kontejneru také nepatří. Vratné zálohované sklo vracejte zpět do obchodu.",
+        "Varné a laboratorní sklo díky své vyšší teplotě tavení nepatří do běžných kontejnerů na ulicích. Pokud se Vám rozbije například skleněná varná konvice, hoďte ji do směsného odpadu. V případě většího množství tohoto skla využijte sběrný dvůr.",
+        "O skle mluvíme jako o materiálu minulosti, současnosti a budoucnosti právě proto, že jej lze recyklovat donekonečna.",
+        "Na třídičce umí: optická třídička prosvítit střepy a nevhodné položky odstranit. Poradí si i s oddělením kovů od skla – proto nevadí víčka. Laserová čidla umí střepy rozlišit podle barev.",
+        "Etikety, ale ani zbytky obsahu při recyklaci nevadí, protože při teplotě tavení (cca 1 600 °C) shoří.",
+        "Největší úskalí při tavení skla představují materiály, které se běžnému sklu podobají. Nesprávně do kontejnerů na sklo lidé třídí například porcelán, bezpečnostní sklo, autosklo, sklokeramiku nebo třeba varné sklo apod. Takové materiály mají úplně jiné tavicí nároky – vyžadují vyšší teploty k roztavení. Proto existují speciální rentgeny, které umí i tyto materiály odhalit a ty tak mohou být od „běžného“ skla odděleny."
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +56,8 @@ class GlassFragment : Fragment() {
         header.text = "Kontejner na sklo"
         header.setTextAppearance(R.style.TipHeadingTextView)
         header.setBackgroundResource(R.color.colorGreenGlass)
+        header.setPadding(15,20,15,20)
+
         linearLayout.addView(header)
 
         for (tip in glass_tips){

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="?attr/selectableItemBackground"
+              android:orientation="vertical"
+              android:id="@+id/ll_recycling_item_view">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/item_recycling_code_content_padding">
+        <RelativeLayout
+                android:id="@+id/rl_recycling_code_image_part"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:padding="@dimen/item_recycling_code_content_padding">
+
+            <ImageView
+                    android:id="@+id/iv_recycling_code_image"
+                    android:layout_width="@dimen/item_recycling_code_image_size"
+                    android:layout_height="@dimen/item_recycling_code_image_size"
+                    android:src="@drawable/recycling_symbol"/>
+
+            <TextView
+                    android:id="@+id/tv_recycling_code_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/iv_recycling_code_image"
+                    android:layout_alignTop="@id/iv_recycling_code_image"
+                    android:layout_alignRight="@id/iv_recycling_code_image"
+                    android:layout_alignBottom="@id/iv_recycling_code_image"
+                    android:layout_marginTop="@dimen/item_recycling_code_number_marginTop"
+                    android:textSize="@dimen/item_recycling_code_number_text_size"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    tools:text="1"
+                    android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/item_recycling_code_content_padding"
+                android:layout_marginLeft="@dimen/item_recycling_code_content_margin">
+            <TextView
+                    android:id="@+id/tv_recycling_code_title"
+                    tools:text="TITLE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/item_recycling_code_title_text_size"
+                    android:paddingBottom="@dimen/item_recycling_code_content_padding"/>
+            <TextView
+                    android:id="@+id/tv_recycling_code_description"
+                    tools:text="Description"
+                    android:textSize="@dimen/item_recycling_code_description_text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tv_recycling_code_code"
+            android:layout_width="@dimen/item_recycling_code_image_size"
+            android:layout_height="wrap_content"
+            tools:text="PET"
+            android:layout_marginLeft="@dimen/item_recycling_code_content_padding"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/item_recycling_code_code_text_size"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_recycling_code_divider_height"
+            android:layout_marginTop="@dimen/item_recycling_code_divider_marginTop"
+            android:background="@android:color/black"/>
+</LinearLayout>

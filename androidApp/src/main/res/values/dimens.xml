@@ -2,4 +2,16 @@
 <resources>
     <dimen name="activity_horizontal_margin">0dp</dimen>
     <dimen name="activity_vertical_margin">0dp</dimen>
+
+    <dimen name="item_recycling_code_image_size">75dp</dimen>
+    <dimen name="item_recycling_code_number_marginTop">13dp</dimen>
+    <dimen name="item_recycling_code_number_text_size">22dp</dimen>
+    <dimen name="item_recycling_code_code_text_size">15dp</dimen>
+    <dimen name="item_recycling_code_title_text_size">20dp</dimen>
+    <dimen name="item_recycling_code_description_text_size">15dp</dimen>
+    <dimen name="item_recycling_code_content_padding">2dp</dimen>
+    <dimen name="item_recycling_code_content_margin">5dp</dimen>
+    <dimen name="item_recycling_code_divider_marginTop">5dp</dimen>
+    <dimen name="item_recycling_code_divider_height">0.3dp</dimen>
+    <dimen name="item_recycling_code_number_text_size_small">15dp</dimen>
 </resources>

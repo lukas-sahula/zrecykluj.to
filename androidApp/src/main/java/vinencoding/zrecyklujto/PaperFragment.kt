@@ -24,15 +24,18 @@ class PaperFragment : Fragment() {
     private var param2: String? = null
 
     private val paper_tips = arrayOf(
-        "Z časopisů a jiných dokumentů není třeba odstraňovat odstraňovat svorky. Při dalším zpracování papíru v papírnách se při rozvláknění a následném několikastupňovém třídění jsou odloučeny.",
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
+        "Z časopisů a jiných dokumentů není třeba odstraňovat svorky. Při dalším zpracování papíru v papírnách jsou při rozvláknění a následném několikastupňovém třídění odloučeny.",
         "Laminátový papír nepatří do papíru. Jinak do papíru patří papír všeho druhu, kromě polaminátovaného a povoskovaného papíru.",
         "Do modrého kontejneru vhazujte skartovaný papír stejně jako každý jiný papír, který není mokrý, mastný nebo jinak znečištěný. Tím se myslí i biologické nečistoty.",
-        "Do kontejneru na papír můžete vhazovat obálky i s foliovým okénkem. Při dalším zpracování papíru v papírnách se při rozvláknění a následném několikastupňovém třídění jsou odloučeny Pokud však vyhazujete obálku s ochrannou bublinkovou fólií, tak tu je potřeba odstranit.",
+        "Do kontejneru na papír můžete vhazovat obálky i s foliovým okénkem. Při dalším zpracování papíru v papírnách jsou při rozvláknění a následném několikastupňovém třídění odloučeny. Pokud však vyhazujete obálku s ochrannou bublinkovou fólií, tak tu je potřeba odstranit.",
+        "Použité krabice nejsou odpad. Příbývá e-shopů, kam můžete krabice i výplňový materiál odevzdat. Pokud žádný ve svém okolí nemáte, rozloženou krabici můžete vyhodit do modrých kontejnerů na papír.",
         "Krabice rozložte nebo sešlápněte, aby v kontejneru zabíraly co nejméně místa. Pokud z nich odstraníte izolepy, části hodně zanesené lepidly, nic tím nezkazíte.",
         "Dokumenty jako bankovní výpisy či jiné, které obsahují vaše osobní data, vždy roztrhejte, aby nemohlo dojít k jejich zneužití.",
         "Účtenky z termopapíru patří do směsného odpadu, protože v drtivé většině případů obsahuje látku Bisfenol.  Uvolněné látky pak znečišťují vodu v papírnách a dostávají se do papíroviny. Tyto účtenky lze tedy třídit pouze, pokud máme jistotu, že jsou fenol-free. Informaci o obsahu těchto látek však běžně na samotném termopapíru nedohledáme.",
-        "Ruličky od toaletního papíru a plata od vajec už se třídí. Dříve se správně házeli do směsného odpadu, recyklační technologie ale pokročily a tak už můžete oba tyto odpady házet do modrých kontejnerů na papír. Ruličky od toaletního papíru, plata od vajec, karton i noviny lze kompostovat.",
-        "Použité krabice nejsou odpad. Příbývá e-shopů, kam můžete krabice i výplňový materiál odevzdat. Pokud žádný ve svém okolí nemáte, rozloženou krabici můžete vyhodit do modrých kontejnerů na papír."
+        "Ruličky od toaletního papíru a plata od vajec se už třídí. Dříve se správně házeli do směsného odpadu, recyklační technologie ale pokročily a tak už můžete oba tyto odpady házet do modrých kontejnerů na papír. Ruličky od toaletního papíru, plata od vajec, karton i noviny lze kompostovat.",
+        "Šanony vyrobené z papíru patří i s kovovýma součástkama do modrého kontejneru. Plastové šanony a papírové s laminovou vrstvou vyhazujeme do směsného odpadu.",
+        "Dětské pleny nepatří do modrého kontejneru na třídění papíru. Dále sem nepatří svazky knih, uhlový papír, jízdenky, papíry zatavené ve foliích, balící papíry s povrchovou úpravou, fotografie, kapesníky, dámské hygienické potřeby, vlhčené ubrousky a tampony."
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,16 +1,12 @@
 package vinencoding.zrecyklujto
 
 import android.os.Bundle
-import android.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.core.widget.TextViewCompat
-import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +24,8 @@ class PlasticFragment : Fragment() {
     private var param2: String? = null
 
     private val plastic_tips = arrayOf(
+        "Informace, podle kterých byste se měli při třídění odpadu řídit, naleznete přímo na barevných sběrných nádobách. Na kontejnerech jsou umístěny nálepky, které přesně popisují, co do nich patří a co ne. O místních podmínkách systému sběru tříděného odpadu vždy rozhoduje obec, proto se všude třídí jiným způsobem.",
+        "Nádoba na třídění plastu by měla být vždy označena žlutou barvou a viditelnou nálepkou s informacemi. V některých obcích naleznete společné třídicí nádoby pro plast i nápojové kartony.",
         "PET láhve můžete do kontejneru vhazovat s etiketou i víčkem. Obojí bude při dalším zpracování automaticky odděleno. PET láhve sešlápněte, nasaďte víčko a to již neutahujte! Nesešlápnuté láhve jsou objemné a tím zdražují přepravu, komplikují manipulaci a recyklace se tak stává nákladnější.",
         "Pokud má PET lahev místo etikety tzv. shrink sleeve (rukávek/návlek zpravidla po celém těle lahve), je nutné tento návlek z lahve odstranit a vytřídit do kontejneru na plasty zvlášť. (Mohou být vyrobeny z jiných materiálů a zpracování společně s PET by pak nebylo možné).",
         "Kelímky od jogurtů a jiných potravin není třeba důkladně vymývat, drobné znečištění obalů nevadí. Stačí tedy, když potravinu důkladně dojíte nebo z kelímku pořádně vyškrábnete. Ale je lepší je lehce vypláchnout vlažnou vodou, protože při delším skladování doma, by mohly být cítit. Navíc mastné obaly či obaly se zbytky potravin omezují následnou recyklaci.",
@@ -35,7 +33,8 @@ class PlasticFragment : Fragment() {
         "Nově lze do speciálně označených žlutých kontejnerů házet kromě plastu také kov. Materiály se pak oddělí v dotřiďovací lince.",
         "Plastové obaly od CD, DVD nebo videokazet patří do plastů. DVD a videokazety odvezte nejlépe na sběrný dvůr. CD můžete v malém množství vyhodit do směsného odpadu, ve větším množství patří na sběrný dvůr.",
         "Obaly od kosmetiky patří do tříděného odpadu. Nejedná se o žádné nebezpečné látky, stačí tedy, když zbytky kosmetických přípravků jako jsou mýdla, šampony, krémy zcela spotřebujete. Do kontejneru na tříděný odpad pak můžete klidně prázdné obaly vhodit.",
-        "Pokud obal od oleje pečlivě vymyjete teplou vodou s přípravkem na mytí nádobí, můžete jej vhodit do plastů. V případě, že tak neučiníte, vhazujte tento znečištěný obal do směsného odpadu. Olej totiž značně komplikuje následnou recyklaci tříděného odpadu."
+        "Pokud obal od oleje pečlivě vymyjete teplou vodou s přípravkem na mytí nádobí, můžete jej vhodit do plastů. V případě, že tak neučiníte, vhazujte tento znečištěný obal do směsného odpadu. Olej totiž značně komplikuje následnou recyklaci tříděného odpadu.",
+        "Do kontejneru na plast nepatří  mastné obaly se zbytky potravin nebo čistících přípravků, obaly od žíravin, barev a jiných nebezpečných látek, podlahové krytiny či novodurové trubky."
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
