@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:background="@drawable/default_option_bg">
+        android:background="@color/colorQuizLightGreen">
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:padding="6dp"
-            android:textColor="@color/quizText">
+            android:textColor="@color/colorQuizText">
     </TextView>
 
 </LinearLayout>

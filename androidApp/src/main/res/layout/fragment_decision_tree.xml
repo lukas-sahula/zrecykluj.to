@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DecisionTreeFragment">
+    tools:context=".fragments.DecisionTreeFragment"
+    android:padding="@dimen/decision_tree_content_padding">
 
 
     <ScrollView

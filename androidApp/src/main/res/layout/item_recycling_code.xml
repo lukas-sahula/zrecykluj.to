@@ -22,7 +22,7 @@
                     android:id="@+id/iv_recycling_code_image"
                     android:layout_width="@dimen/item_recycling_code_image_size"
                     android:layout_height="@dimen/item_recycling_code_image_size"
-                    android:src="@drawable/recycling_symbol"/>
+                    android:src="@drawable/ic_holo_recycling_symbol"/>
 
             <TextView
                     android:id="@+id/tv_recycling_code_number"
@@ -36,8 +36,19 @@
                     android:textSize="@dimen/item_recycling_code_number_text_size"
                     android:gravity="center"
                     android:textColor="@android:color/black"
-                    tools:text="1"
+                    tools:text="111"
                     android:textStyle="bold"/>
+            <TextView
+                    android:id="@+id/tv_recycling_code_code"
+                    android:layout_width="@dimen/item_recycling_code_image_size"
+                    android:layout_height="wrap_content"
+                    tools:text="PET"
+                    android:layout_marginLeft="@dimen/item_recycling_code_content_padding"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/item_recycling_code_code_text_size"/>
         </RelativeLayout>
 
         <LinearLayout
@@ -66,17 +77,6 @@
                     android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
-            android:id="@+id/tv_recycling_code_code"
-            android:layout_width="@dimen/item_recycling_code_image_size"
-            android:layout_height="wrap_content"
-            tools:text="PET"
-            android:layout_marginLeft="@dimen/item_recycling_code_content_padding"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="@dimen/item_recycling_code_code_text_size"/>
 
     <View
             android:layout_width="match_parent"

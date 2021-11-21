@@ -4,54 +4,53 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              tools:context=".QuizFragment"
+              tools:context=".fragments.QuizFragment"
               android:gravity="center"
               android:orientation="vertical"
-              android:background="@color/colorQuizLightGreen">
+              android:background="@drawable/quiz_background">
 
     <TextView
             android:id="@+id/textView"
-            android:text="QUIZ"
+            android:text="@string/quiz_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="35dp"
-            android:textSize="35sp"
+            android:layout_marginBottom="@dimen/quiz_title_marginBottom"
+            android:textSize="@dimen/quiz_title_text_size"
             android:textStyle="bold"
-            android:textColor="@color/quizText"
+            android:textColor="@android:color/white"
             android:gravity="center"/>
 
     <androidx.cardview.widget.CardView
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            app:cardCornerRadius="6dp"
-            android:elevation="6dp"
-            android:padding="10dp"
+            android:layout_marginStart="@dimen/quiz_card_margin"
+            android:layout_marginEnd="@dimen/quiz_card_margin"
+            app:cardCornerRadius="@dimen/quiz_card_corner_radius"
+            android:padding="@dimen/quiz_card_padding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/white">
         <LinearLayout
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="20dp"
+                android:padding="@dimen/quiz_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:text="Otestuje své znalosti recyklování"
+                    android:text="@string/quiz_description_text"
                     android:gravity="center"
-                    android:textSize="18sp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/quiz_description_text_size"
+                    android:layout_marginBottom="@dimen/quiz_description_marginBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/quizText"
-                    android:id="@+id/textView4"/>
+                    android:textColor="@color/colorQuizText"/>
             <Button
                     android:id="@+id/start_quiz_button"
-                    android:text="Spustit"
+                    android:text="@string/quiz_start_text"
                     android:gravity="center"
                     android:background="@drawable/quiz_button_bg"
                     android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/quiz_button_marginTop"
+                    android:textSize="@dimen/quiz_button_text_size"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
         </LinearLayout>

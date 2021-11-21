@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/quiz_result_layout_padding"
+        android:background="@drawable/quiz_background">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/quiz_result_textview_marginTop"
+            android:text="@string/quiz_result_title"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/quiz_result_textview_marginBottom"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/quiz_result_title_text_size"
+            android:textStyle="bold"/>
+
+    <androidx.cardview.widget.CardView
+            android:layout_marginStart="@dimen/quiz_result_card_margin"
+            android:layout_marginEnd="@dimen/quiz_result_card_margin"
+            app:cardCornerRadius="@dimen/quiz_result_card_radius"
+            android:elevation="@dimen/quiz_result_card_elevation"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/quiz_result_layout_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/tv_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="@dimen/quiz_result_card_text_size"
+                    android:textStyle="bold"/>
+            <Button
+                    android:id="@+id/finish_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/quiz_result_button_marginTop"
+                    android:text="@string/quiz_result_button_finish"
+                    android:elevation="@dimen/quiz_result_button_elevation"
+                    android:textSize="@dimen/quiz_result_button_text_size"
+                    android:background="@drawable/quiz_button_bg"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

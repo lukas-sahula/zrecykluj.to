@@ -1,15 +1,20 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="home_fragment_title">Home</string>
-    <string name="barcode_fragment_title">Barcode</string>
+    <!-- titles -->
     <string name="decision_tree_fragment_title">Decision tree</string>
     <string name="quiz_fragment_title">Quiz</string>
-    <string name="map_fragment_title">Map</string>
     <string name="main_activity_title">Zrecykluj To!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button_start_text">Spustit</string>
+    <!-- texts -->
     <string name="button_submit_text">Potvrdit</string>
     <string name="button_finish_text">Ukončit</string>
     <string name="button_next_text">Další otázka</string>
+    <string name="quiz_description_text">Otestuje své znalosti recyklování</string>
+    <string name="quiz_start_text">Spustit</string>
+    <string name="quiz_title_text">QUIZ</string>
+    <string name="quiz_result_title">Výsledek</string>
+    <string name="quiz_result_button_finish">Ukončit</string>
+    <string name="score">Skóre je %1$s z %2$s</string>
+    <string name="location_permission_granted">Aplikace může používat polohu. Změnu můžete provést v nastavení aplikace.</string>
+    <string name="enable_location_in_settings">Oprávnění polohy bylo zamítnuto. Změnu můžete provést v nastavení aplikace.</string>
+    <string name="go_to_settings">Přejít do nastavení</string>
+    <string name="cancel">Zrušit</string>
 </resources>

@@ -5,6 +5,8 @@ import vinencoding.zrecyklujto.models.RecyclingCode
 
 object Constants {
 
+    const val LOCATION_PERMISSION_REQUEST_CODE = 2
+
     const val TOTAL_QUESTIONS: String = "total_question"
     const val CORRECT_ANSWERS: String = "correct_answers"
 

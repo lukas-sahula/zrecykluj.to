@@ -5,31 +5,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:screenOrientation">portrait</item>
     </style>
 
     <style name="IconOnlyButton">
         <item name="iconPadding">0dp</item>
         <item name="iconGravity">textStart</item>
-    </style>
-
-    <style name="HeadingTextView" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">18dp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="DescriptionTextView" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">14dp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="SymbolTextView" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">16dp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="SymbolTextViewSmaller" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">11dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TipHeadingTextView" parent="TextAppearance.AppCompat">
@@ -42,28 +23,18 @@
     </style>
 
     <style name="QuizTextQuestion" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/quizText</item>
+        <item name="android:textColor">@color/colorQuizText</item>
         <item name="android:textSize">24sp</item>
     </style>
 
     <style name="QuizTextButton" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/quizText</item>
+        <item name="android:textColor">@color/colorQuizText</item>
         <item name="android:textSize">18sp</item>
     </style>
 
     <style name="QuizTextExplanation" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/quizText</item>
+        <item name="android:textColor">@color/colorQuizText</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="BaseCardView" parent="CardView">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-    </style>
 </resources>
